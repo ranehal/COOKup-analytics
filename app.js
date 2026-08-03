@@ -1,8 +1,13 @@
 /* ==========================================================================
    COOKup Tracker - Modern Application Logic & Chart.js Analytics
+   Supports Live API Backend & Static Fallback (GitHub Pages)
    ========================================================================== */
 
 const API_BASE = '/api';
+
+let isStaticMode = false;
+let staticDishes = null;
+let staticHistory = null;
 
 // State Management
 const state = {
@@ -61,10 +66,10 @@ const elements = {
 };
 
 // Initialize App
-document.addEventListener('DOMContentLoaded', () => {
-  loadStats();
-  loadCategories();
-  loadDishes();
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadStats();
+  await loadCategories();
+  await loadDishes();
 
   setupEventListeners();
 });
@@ -89,7 +94,7 @@ function setupEventListeners() {
 
   // Price Slider
   elements.priceRange.addEventListener('input', (e) => {
-    state.maxPrice = e.target.value;
+    state.maxPrice = parseFloat(e.target.value);
     elements.priceRangeVal.textContent = `৳${state.maxPrice}`;
     state.page = 1;
     loadDishes();
@@ -145,31 +150,50 @@ function setupEventListeners() {
   });
 }
 
+function updateStatsUI(data) {
+  elements.statTotalDishes.textContent = data.total_dishes.toLocaleString();
+  elements.statCategories.textContent = data.total_categories;
+  elements.statPriceDrops.textContent = data.price_drops;
+  elements.statAvgPrice.textContent = `৳${data.avg_price}`;
+}
+
 // Fetch Global Statistics
 async function loadStats() {
   try {
     const res = await fetch(`${API_BASE}/stats`);
+    if (!res.ok) throw new Error("API not available");
     const data = await res.json();
-    elements.statTotalDishes.textContent = data.total_dishes.toLocaleString();
-    elements.statCategories.textContent = data.total_categories;
-    elements.statPriceDrops.textContent = data.price_drops;
-    elements.statAvgPrice.textContent = `৳${data.avg_price}`;
+    updateStatsUI(data);
   } catch (err) {
-    console.error("Failed to load stats:", err);
+    isStaticMode = true;
+    try {
+      const res = await fetch('data/stats.json');
+      const data = await res.json();
+      updateStatsUI(data);
+    } catch (e) {
+      console.error("Failed to load static stats:", e);
+    }
   }
 }
 
 // Fetch & Render Category Tree
 async function loadCategories() {
   try {
-    const res = await fetch(`${API_BASE}/categories`);
+    const res = isStaticMode ? await fetch('data/categories.json') : await fetch(`${API_BASE}/categories`);
+    if (!res.ok) throw new Error("API not available");
     state.categories = await res.json();
-    elements.catBadge.textContent = state.categories.length;
-
-    renderCategoryTree();
   } catch (err) {
-    console.error("Failed to load categories:", err);
+    isStaticMode = true;
+    try {
+      const res = await fetch('data/categories.json');
+      state.categories = await res.json();
+    } catch (e) {
+      console.error("Failed to load categories:", e);
+      state.categories = [];
+    }
   }
+  elements.catBadge.textContent = state.categories.length;
+  renderCategoryTree();
 }
 
 function renderCategoryTree() {
@@ -211,6 +235,62 @@ function selectCategory(id, name) {
 async function loadDishes() {
   elements.dishesGrid.innerHTML = `<div class="loading-skeleton">Loading items...</div>`;
 
+  if (isStaticMode) {
+    try {
+      if (!staticDishes) {
+        const res = await fetch('data/dishes.json');
+        staticDishes = await res.json();
+      }
+
+      let filtered = staticDishes.filter(d => {
+        if (state.currentCategory && d.category_id !== state.currentCategory) {
+          const isSub = state.categories.some(c => c.id === d.category_id && c.parent_ids && c.parent_ids.includes(state.currentCategory));
+          if (!isSub) return false;
+        }
+        if (state.searchQuery) {
+          const q = state.searchQuery.toLowerCase();
+          const m1 = d.name && d.name.toLowerCase().includes(q);
+          const m2 = d.bengali_name && d.bengali_name.toLowerCase().includes(q);
+          const m3 = d.cook_name && d.cook_name.toLowerCase().includes(q);
+          if (!m1 && !m2 && !m3) return false;
+        }
+        if (d.current_price > state.maxPrice) return false;
+        if (state.priceDropsOnly && (!d.previous_price || d.current_price >= d.previous_price)) return false;
+        return true;
+      });
+
+      if (state.sortBy === 'price_asc') filtered.sort((a, b) => a.current_price - b.current_price);
+      else if (state.sortBy === 'price_desc') filtered.sort((a, b) => b.current_price - a.current_price);
+      else if (state.sortBy === 'rating_desc') filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+      else if (state.sortBy === 'discount_desc') {
+        filtered.sort((a, b) => {
+          const da = a.previous_price ? (a.previous_price - a.current_price) / a.previous_price : 0;
+          const db = b.previous_price ? (b.previous_price - b.current_price) / b.previous_price : 0;
+          return db - da;
+        });
+      } else {
+        filtered.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+      }
+
+      const total = filtered.length;
+      state.totalPages = Math.ceil(total / state.limit) || 1;
+      const start = (state.page - 1) * state.limit;
+      const pageItems = filtered.slice(start, start + state.limit);
+
+      elements.resultsBadge.textContent = `${total.toLocaleString()} items found`;
+      elements.paginationInfo.textContent = `Page ${state.page} of ${state.totalPages}`;
+      elements.btnPrevPage.disabled = state.page <= 1;
+      elements.btnNextPage.disabled = state.page >= state.totalPages;
+
+      renderDishesGrid(pageItems);
+      return;
+    } catch (e) {
+      console.error("Failed loading static dishes:", e);
+      elements.dishesGrid.innerHTML = `<div class="error-msg">Failed to load static dataset.</div>`;
+      return;
+    }
+  }
+
   const params = new URLSearchParams({
     page: state.page,
     limit: state.limit,
@@ -224,6 +304,7 @@ async function loadDishes() {
 
   try {
     const res = await fetch(`${API_BASE}/dishes?${params.toString()}`);
+    if (!res.ok) throw new Error("API not ok");
     const data = await res.json();
 
     state.totalPages = data.total_pages;
@@ -234,8 +315,9 @@ async function loadDishes() {
 
     renderDishesGrid(data.items);
   } catch (err) {
-    console.error("Failed to load dishes:", err);
-    elements.dishesGrid.innerHTML = `<div class="error-msg">Failed to load items. Make sure backend server is running.</div>`;
+    console.error("Failed to load dishes via API, falling back to static:", err);
+    isStaticMode = true;
+    loadDishes();
   }
 }
 
@@ -296,41 +378,65 @@ function renderDishesGrid(dishes) {
   });
 }
 
+function populateModalUI(d, stats, history) {
+  const defaultImg = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80';
+  elements.modalImg.onerror = () => { elements.modalImg.src = defaultImg; };
+  elements.modalImg.src = (d.image_url && d.image_url.startsWith('http')) ? d.image_url : defaultImg;
+  elements.modalCat.textContent = d.category_name || 'Cookups Special';
+  elements.modalName.textContent = d.name;
+  elements.modalBengali.textContent = d.bengali_name || '';
+  elements.modalCook.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> ${d.cook_name}`;
+  elements.modalServing.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> ${d.serving_size} ${d.serving_type}`;
+  elements.modalRating.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> ${d.rating ? d.rating.toFixed(1) : 'N/A'} (${d.rating_count || 0})`;
+
+  elements.modalCurrentPrice.textContent = `৳${d.current_price}`;
+  elements.modalLowestPrice.textContent = `৳${stats.lowest_price}`;
+  elements.modalHighestPrice.textContent = `৳${stats.highest_price}`;
+  elements.modalAvgPrice.textContent = `৳${stats.avg_price}`;
+
+  elements.modalLowestBadge.classList.toggle('hidden', !stats.is_lowest_ever);
+
+  setTimeout(() => {
+    renderPriceChart(history);
+  }, 100);
+}
+
 // Price History Modal (CamelCamelCamel & SteamDB Style)
 async function openPriceModal(dishId) {
   elements.priceModal.classList.remove('hidden');
 
+  if (isStaticMode) {
+    try {
+      if (!staticHistory) {
+        const res = await fetch('data/history.json');
+        staticHistory = await res.json();
+      }
+      const d = staticDishes ? staticDishes.find(item => item.id === dishId) : null;
+      if (!d) return;
+      const history = staticHistory[dishId] || [];
+      const prices = history.length > 0 ? history.map(h => h.price) : [d.current_price];
+      const lowest_price = Math.min(...prices);
+      const highest_price = Math.max(...prices);
+      const avg_price = Math.round((prices.reduce((a, b) => a + b, 0) / prices.length) * 100) / 100;
+      const is_lowest_ever = d.current_price <= lowest_price;
+
+      populateModalUI(d, { lowest_price, highest_price, avg_price, is_lowest_ever, history_count: history.length }, history);
+      return;
+    } catch (e) {
+      console.error("Failed to load static history:", e);
+      return;
+    }
+  }
+
   try {
     const res = await fetch(`${API_BASE}/dish/${dishId}`);
+    if (!res.ok) throw new Error("API not ok");
     const data = await res.json();
-    const d = data.dish;
-    const stats = data.stats;
-    const history = data.price_history;
-
-    const defaultImg = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80';
-    elements.modalImg.onerror = () => { elements.modalImg.src = defaultImg; };
-    elements.modalImg.src = (d.image_url && d.image_url.startsWith('http')) ? d.image_url : defaultImg;
-    elements.modalCat.textContent = d.category_name || 'Cookups Special';
-    elements.modalName.textContent = d.name;
-    elements.modalBengali.textContent = d.bengali_name || '';
-    elements.modalCook.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> ${d.cook_name}`;
-    elements.modalServing.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> ${d.serving_size} ${d.serving_type}`;
-    elements.modalRating.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> ${d.rating ? d.rating.toFixed(1) : 'N/A'} (${d.rating_count || 0})`;
-
-    // Metrics
-    elements.modalCurrentPrice.textContent = `৳${d.current_price}`;
-    elements.modalLowestPrice.textContent = `৳${stats.lowest_price}`;
-    elements.modalHighestPrice.textContent = `৳${stats.highest_price}`;
-    elements.modalAvgPrice.textContent = `৳${stats.avg_price}`;
-
-    elements.modalLowestBadge.classList.toggle('hidden', !stats.is_lowest_ever);
-
-    // Render Chart.js after modal is visible
-    setTimeout(() => {
-      renderPriceChart(history);
-    }, 100);
+    populateModalUI(data.dish, data.stats, data.price_history);
   } catch (err) {
-    console.error("Failed to fetch dish details:", err);
+    console.error("Failed to fetch dish details via API, attempting static fallback:", err);
+    isStaticMode = true;
+    openPriceModal(dishId);
   }
 }
 
@@ -357,18 +463,15 @@ function renderPriceChart(history) {
   const graphW = width - padding.left - padding.right;
   const graphH = height - padding.top - padding.bottom;
 
-  // Build Points
   const points = prices.map((price, idx) => {
     const x = padding.left + (idx / (prices.length - 1 || 1)) * graphW;
     const y = padding.top + graphH - ((price - minP) / range) * graphH;
     return { x, y, price, date: dates[idx] };
   });
 
-  // Polyline & Area path
   const pathD = points.reduce((acc, p, i) => i === 0 ? `M ${p.x} ${p.y}` : `${acc} L ${p.x} ${p.y}`, '');
   const areaD = `${pathD} L ${points[points.length - 1].x} ${height - padding.bottom} L ${points[0].x} ${height - padding.bottom} Z`;
 
-  // Grid Y lines
   const yTicks = 4;
   let yGridHtml = '';
   for (let i = 0; i <= yTicks; i++) {
@@ -380,7 +483,6 @@ function renderPriceChart(history) {
     `;
   }
 
-  // X Labels (sample 6 ticks)
   let xGridHtml = '';
   const step = Math.max(1, Math.floor(points.length / 6));
   for (let i = 0; i < points.length; i += step) {
@@ -388,7 +490,6 @@ function renderPriceChart(history) {
     xGridHtml += `<text x="${p.x}" y="${height - 10}" fill="#94a3b8" font-size="11" text-anchor="middle">${p.date}</text>`;
   }
 
-  // Data Dots
   const dotsHtml = points.map(p => `
     <circle class="chart-dot" cx="${p.x}" cy="${p.y}" r="4" fill="#8b5cf6" stroke="#ffffff" stroke-width="1.5">
       <title>${p.date}: ৳${p.price}</title>
@@ -424,6 +525,10 @@ function closeModal() {
 
 // Trigger Real-Time Scraper
 async function triggerRealtimeScrape() {
+  if (isStaticMode) {
+    alert("Live scraper requires local backend execution. Run 'python server.py' to use live API & background scraping.");
+    return;
+  }
   elements.btnTriggerScrape.classList.add('spinning');
   elements.btnTriggerScrape.disabled = true;
   elements.toastScraper.classList.remove('hidden');
@@ -440,7 +545,7 @@ async function triggerRealtimeScrape() {
       loadStats();
       loadCategories();
       loadDishes();
-    }, 6000); // 6s update window
+    }, 6000);
   } catch (err) {
     console.error("Scraper trigger error:", err);
     elements.btnTriggerScrape.classList.remove('spinning');
