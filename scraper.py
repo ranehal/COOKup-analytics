@@ -5,6 +5,7 @@ import datetime
 import time
 import os
 import sys
+from concurrent.futures import ThreadPoolExecutor
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -334,15 +335,27 @@ def run_full_scrape():
     
     total_dishes_scraped = 0
     cats_with_dishes = 0
-    
-    for idx, cat in enumerate(categories):
-        cid = cat["id"]
-        cname = cat["name"]
-        dishes_count = fetch_dishes_for_category(cid, now_str, today_str)
-        if dishes_count > 0:
-            cats_with_dishes += 1
-            total_dishes_scraped += dishes_count
-            print(f"[{idx+1}/{len(categories)}] {cname}: {dishes_count} items")
+
+    MAX_WORKERS = 5
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {
+            executor.submit(fetch_dishes_for_category, cat["id"], now_str, today_str): (idx, cat)
+            for idx, cat in enumerate(categories)
+        }
+        for future in futures:
+            idx, cat = futures[future]
+            cid = cat["id"]
+            cname = cat["name"]
+            try:
+                dishes_count = future.result()
+            except Exception as e:
+                print(f"  WARNING: category {cname} ({cid}) failed: {e}")
+                continue
+            if dishes_count > 0:
+                cats_with_dishes += 1
+                total_dishes_scraped += dishes_count
+                print(f"[{idx+1}/{len(categories)}] {cname}: {dishes_count} items")
 
     elapsed = round(time.time() - start_time, 2)
     print(f"=== DEEP SCRAPE COMPLETE in {elapsed}s ===")
