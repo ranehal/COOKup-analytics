@@ -90,6 +90,7 @@ def init_db():
     cursor.execute('CREATE INDEX IF NOT EXISTS idx_dishes_category ON dishes(category_id)')
     cursor.execute('CREATE INDEX IF NOT EXISTS idx_price_history_dish ON price_history(dish_id)')
     cursor.execute('CREATE INDEX IF NOT EXISTS idx_price_history_date ON price_history(date_str)')
+    cursor.execute('CREATE UNIQUE INDEX IF NOT EXISTS idx_price_history_dish_date ON price_history(dish_id, date_str)')
 
     conn.commit()
     conn.close()
@@ -304,14 +305,14 @@ def fetch_dishes_for_category(cat_id, now_str, today_str):
                   serving_size, serving_type, rating, rating_count, price, prev_price,
                   img_url, all_imgs, now_str))
 
-            # Price History Entry (1 entry per dish per date, or when price changes)
-            cursor.execute("SELECT price FROM price_history WHERE dish_id = ? AND date_str = ?", (dish_id, today_str))
-            ph_row = cursor.fetchone()
-            if not ph_row or ph_row["price"] != price:
-                cursor.execute('''
-                    INSERT INTO price_history (dish_id, price, timestamp, date_str)
-                    VALUES (?, ?, ?, ?)
-                ''', (dish_id, price, now_str, today_str))
+            # Price History Entry (1 entry per dish per date - keep the latest price of the day)
+            cursor.execute('''
+                INSERT INTO price_history (dish_id, price, timestamp, date_str)
+                VALUES (?, ?, ?, ?)
+                ON CONFLICT(dish_id, date_str) DO UPDATE SET
+                    price = excluded.price,
+                    timestamp = excluded.timestamp
+            ''', (dish_id, price, now_str, today_str))
 
             total_dishes += 1
 

@@ -53,10 +53,13 @@ def seed_price_history():
             # Ensure positive price
             price = max(50.0, price)
 
-            # Insert snapshot
+            # Insert/update snapshot (one row per dish per date)
             cursor.execute('''
-                INSERT OR IGNORE INTO price_history (dish_id, price, timestamp, date_str)
+                INSERT INTO price_history (dish_id, price, timestamp, date_str)
                 VALUES (?, ?, ?, ?)
+                ON CONFLICT(dish_id, date_str) DO UPDATE SET
+                    price = excluded.price,
+                    timestamp = excluded.timestamp
             ''', (dish_id, price, timestamp, date_str))
 
         # Update previous_price and current_price based on profile

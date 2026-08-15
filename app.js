@@ -449,6 +449,21 @@ function renderPriceChart(history) {
     return;
   }
 
+  // Collapse to one point per day (seed + scraper can leave duplicate rows for the same date)
+  const latestByDate = new Map();
+  for (const h of history) {
+    const key = h.date_str || h.timestamp || '';
+    if (!key) continue;
+    const prev = latestByDate.get(key);
+    if (!prev || (h.timestamp || '') >= (prev.timestamp || '')) latestByDate.set(key, h);
+  }
+  history = Array.from(latestByDate.values()).sort((a, b) => (a.date_str || '').localeCompare(b.date_str || ''));
+
+  if (history.length === 0) {
+    wrapper.innerHTML = '<div style="color: var(--text-muted); text-align: center; padding-top: 5rem;">No historical price data available</div>';
+    return;
+  }
+
   const prices = history.map(h => h.price);
   const dates = history.map(h => h.date_str ? h.date_str.slice(5) : '');
 
