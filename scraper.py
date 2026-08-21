@@ -363,5 +363,13 @@ def run_full_scrape():
     print(f"Total Categories: {len(categories)} ({cats_with_dishes} active with items)")
     print(f"Total Dish Records Processed: {total_dishes_scraped}")
 
+    # Auto-export static data for GitHub Pages hosting
+    try:
+        from export_static_data import export_data
+        print("\nExporting static data for GitHub Pages...")
+        export_data()
+    except Exception as e:
+        print(f"  [WARN] Failed to auto-export static data: {e}")
+
 if __name__ == "__main__":
     run_full_scrape()
