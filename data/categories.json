@@ -9,7 +9,7 @@
     "image_url": "",
     "sort_order": 21,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 86
+    "dish_count": 85
   },
   {
     "id": "f2bfe63a-14b4-4d45-ba40-8aa843fe4325",
@@ -33,7 +33,7 @@
     "image_url": "",
     "sort_order": 10,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 33
+    "dish_count": 29
   },
   {
     "id": "57259e5d-b51d-4ed4-a0c8-c23d1006374c",
@@ -47,7 +47,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 24
+    "dish_count": 34
   },
   {
     "id": "63c73d02-7a03-46d0-b558-271c00c20a1e",
@@ -59,7 +59,7 @@
     "image_url": "",
     "sort_order": 4,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 4
+    "dish_count": 15
   },
   {
     "id": "61fd1543-136e-4c48-8b65-07e0f01d048e",
@@ -71,7 +71,7 @@
     "image_url": "",
     "sort_order": 2,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 5
+    "dish_count": 6
   },
   {
     "id": "61233e47-835a-40d9-ba1f-5c7a7d34889b",
@@ -93,7 +93,7 @@
     "image_url": "",
     "sort_order": 12,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 2
+    "dish_count": 1
   },
   {
     "id": "e76d745e-a18f-474f-9f4e-27348502aa23",
@@ -129,7 +129,7 @@
     "image_url": "",
     "sort_order": 7,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 13
+    "dish_count": 12
   },
   {
     "id": "e551f35a-8837-4168-b9a8-4b63214847ed",
@@ -153,7 +153,7 @@
     "image_url": "",
     "sort_order": 20,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 34
+    "dish_count": 29
   },
   {
     "id": "408ca792-70f4-4cfa-bad1-ea358d1e28e1",
@@ -165,7 +165,7 @@
     "image_url": "",
     "sort_order": 12,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 32
+    "dish_count": 41
   },
   {
     "id": "39b076c3-8088-4097-bb6e-ce7a1e3970f6",
@@ -190,7 +190,7 @@
     "image_url": "",
     "sort_order": 3,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 29
+    "dish_count": 30
   },
   {
     "id": "bf0add02-035f-4952-95ae-91845c39d199",
@@ -202,7 +202,7 @@
     "image_url": "",
     "sort_order": 29,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 27
+    "dish_count": 30
   },
   {
     "id": "4b0904d2-d11a-4ecb-b378-e7c333cba45e",
@@ -266,7 +266,7 @@
     "image_url": "",
     "sort_order": 13,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 24
+    "dish_count": 28
   },
   {
     "id": "8d0d05e5-ea71-4066-9af1-df6fca4dc014",
@@ -276,7 +276,7 @@
     "image_url": "",
     "sort_order": 67,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 4
+    "dish_count": 3
   },
   {
     "id": "31d318c6-99d9-49cd-90ba-44a4583a0c32",
@@ -329,7 +329,7 @@
     "image_url": "",
     "sort_order": 16,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 57
+    "dish_count": 58
   },
   {
     "id": "16b79ca1-b259-e5de-7efe-bb1bcbc4b51d",
@@ -363,7 +363,7 @@
     "image_url": "",
     "sort_order": 48,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 23
+    "dish_count": 28
   },
   {
     "id": "17a6b683-77da-4219-bc6a-1f147bd5c22b",
@@ -375,7 +375,7 @@
     "image_url": "",
     "sort_order": 38,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 30
+    "dish_count": 24
   },
   {
     "id": "89f52301-58cc-4160-9c50-6cf61110904d",
@@ -413,7 +413,7 @@
     "image_url": "",
     "sort_order": 15,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 20
+    "dish_count": 21
   },
   {
     "id": "1f7266a1-8b27-4844-b92a-be5235c42a54",
@@ -438,7 +438,7 @@
     "image_url": "",
     "sort_order": 1,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 16
+    "dish_count": 7
   },
   {
     "id": "eba02cf5-bb88-4a75-84b6-effdc6efe8b2",
@@ -452,7 +452,7 @@
     "image_url": "",
     "sort_order": 11,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 14
+    "dish_count": 13
   },
   {
     "id": "4d6c8d65-087d-47dc-94aa-47c10d1ea3a2",
@@ -488,7 +488,7 @@
     "image_url": "",
     "sort_order": 25,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 52
+    "dish_count": 65
   },
   {
     "id": "803e2d03-3a61-40d9-9a16-9e082cf639f5",
@@ -502,7 +502,7 @@
     "image_url": "",
     "sort_order": 8,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 180
+    "dish_count": 189
   },
   {
     "id": "a36de2ee-a9e4-47e5-bd3c-e25ba715c14c",
@@ -516,7 +516,7 @@
     "image_url": "",
     "sort_order": 4,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 31
+    "dish_count": 33
   },
   {
     "id": "391509e5-81c5-4fd7-b611-2702257a5c5a",
@@ -529,7 +529,7 @@
     "image_url": "",
     "sort_order": 29,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 27
+    "dish_count": 32
   },
   {
     "id": "99671042-878e-48bf-90ea-5683f152ec19",
@@ -555,7 +555,7 @@
     "image_url": "",
     "sort_order": 40,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 16
+    "dish_count": 17
   },
   {
     "id": "0a0817d0-4efd-4342-a72a-ed384cf65147",
@@ -567,7 +567,7 @@
     "image_url": "",
     "sort_order": 28,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 11
+    "dish_count": 12
   },
   {
     "id": "8a3bd9ed-c28a-4ec5-bca2-309a800b11d2",
@@ -579,7 +579,7 @@
     "image_url": "",
     "sort_order": 30,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 51
+    "dish_count": 60
   },
   {
     "id": "cc2627d5-2d35-4fa9-9e63-582d5c0517db",
@@ -592,7 +592,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 20
+    "dish_count": 22
   },
   {
     "id": "c3552c1d-1bdd-4115-9463-1494d4c8da29",
@@ -604,7 +604,7 @@
     "image_url": "",
     "sort_order": 7,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 30
+    "dish_count": 29
   },
   {
     "id": "8f8e2b12-1436-41b7-af95-e5c034240502",
@@ -652,7 +652,7 @@
     "image_url": "",
     "sort_order": 97,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 6
+    "dish_count": 7
   },
   {
     "id": "7d0f44de-6ae9-4ac2-b01a-68d23d0405c6",
@@ -676,7 +676,7 @@
     "image_url": "",
     "sort_order": 4,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 24
+    "dish_count": 23
   },
   {
     "id": "bdc9dcab-4cbe-4fe0-a7ab-04660663c040",
@@ -700,7 +700,7 @@
     "image_url": "",
     "sort_order": 10,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 58
+    "dish_count": 63
   },
   {
     "id": "9f29b03f-8a10-465e-9104-2a8845623ae3",
@@ -727,7 +727,7 @@
     "image_url": "",
     "sort_order": 78,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 62
+    "dish_count": 56
   },
   {
     "id": "6dab0e47-c37e-4293-9a72-3379a692017d",
@@ -764,7 +764,7 @@
     "image_url": "",
     "sort_order": 2,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 32
+    "dish_count": 31
   },
   {
     "id": "8a5e996f-b192-4f4c-ab12-5d84b4345dc9",
@@ -800,7 +800,7 @@
     "image_url": "",
     "sort_order": 4,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 7
+    "dish_count": 3
   },
   {
     "id": "e68f456f-fc2a-44f7-9c4c-88bc1c2e7c5d",
@@ -839,7 +839,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 63
+    "dish_count": 59
   },
   {
     "id": "8dc6e366-8f6c-12d6-190a-ec4e7bf5889a",
@@ -861,7 +861,7 @@
     "image_url": "",
     "sort_order": 45,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 7
+    "dish_count": 10
   },
   {
     "id": "786fa69f-b6c4-447a-aa1b-948befc9371a",
@@ -885,7 +885,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 1
+    "dish_count": 3
   },
   {
     "id": "0ccc9e9d-720e-4f79-8719-d08a95e6d296",
@@ -900,7 +900,7 @@
     "image_url": "",
     "sort_order": 20,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 12
+    "dish_count": 10
   },
   {
     "id": "5815bf80-524d-4cdd-a954-06503f4f4d19",
@@ -910,7 +910,7 @@
     "image_url": "",
     "sort_order": 2,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 6
+    "dish_count": 5
   },
   {
     "id": "638de263-ad81-b0d8-92b2-3295a7829a32",
@@ -924,7 +924,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 4
+    "dish_count": 6
   },
   {
     "id": "92ded232-65f5-4c95-a5c4-5863132e76df",
@@ -942,7 +942,7 @@
     "image_url": "",
     "sort_order": 8,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 22
+    "dish_count": 21
   },
   {
     "id": "2e19c558-ca11-4cad-a02e-7ec51c19759f",
@@ -954,7 +954,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 16
+    "dish_count": 14
   },
   {
     "id": "47873208-bdda-43cf-8f41-4a3b71163665",
@@ -966,7 +966,7 @@
     "image_url": "",
     "sort_order": 71,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 7
+    "dish_count": 12
   },
   {
     "id": "9a96a700-2681-4ac3-990b-30a55042454c",
@@ -990,7 +990,7 @@
     "image_url": "",
     "sort_order": 45,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 11
+    "dish_count": 8
   },
   {
     "id": "73cfe4c4-dd83-4691-9872-a3a186abfa45",
@@ -1075,7 +1075,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 3
+    "dish_count": 6
   },
   {
     "id": "f06a46ec-367b-40b7-99f0-509b9a2d42a8",
@@ -1123,7 +1123,7 @@
     "image_url": "",
     "sort_order": 2,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 7
+    "dish_count": 6
   },
   {
     "id": "5d066280-d83c-4373-b6b8-9b92756240d7",
@@ -1135,7 +1135,7 @@
     "image_url": "",
     "sort_order": 234,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 67
+    "dish_count": 74
   },
   {
     "id": "b8a26b50-be2c-46ad-9d47-5caa52b9c6fa",
@@ -1148,7 +1148,7 @@
     "image_url": "",
     "sort_order": 62,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 100
+    "dish_count": 101
   },
   {
     "id": "e03264f3-8f13-4c0c-b8d2-85a325f64b7d",
@@ -1184,7 +1184,7 @@
     "image_url": "",
     "sort_order": 1,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 0
+    "dish_count": 1
   },
   {
     "id": "e4220200-fd11-4fc0-998f-88eff920df3a",
@@ -1233,7 +1233,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 1
+    "dish_count": 2
   },
   {
     "id": "ce16a810-177b-4bdd-9c94-6feb0ce1c3ef",
@@ -1245,7 +1245,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 8
+    "dish_count": 6
   },
   {
     "id": "b884a4db-cda0-4811-a3c4-45544543b7fa",
@@ -1269,7 +1269,7 @@
     "image_url": "",
     "sort_order": 77,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 14
+    "dish_count": 3
   },
   {
     "id": "dc80754e-bf8f-4b6f-9de9-49136e2e7c8f",
@@ -1281,7 +1281,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 15
+    "dish_count": 1
   },
   {
     "id": "683cab1e-0d41-476b-a196-1a0aac2dc643",
@@ -1291,7 +1291,7 @@
     "image_url": "",
     "sort_order": 59,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 14
+    "dish_count": 10
   },
   {
     "id": "d2f89243-8b6a-42ce-934f-6a349bea2457",
@@ -1316,7 +1316,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 8
+    "dish_count": 16
   },
   {
     "id": "31703b17-3ffd-4029-b6e3-77fbdbf3963a",
@@ -1328,7 +1328,7 @@
     "image_url": "",
     "sort_order": 7,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 13
+    "dish_count": 12
   },
   {
     "id": "7edf41e0-2dd6-1699-53a8-36101901e850",
@@ -1375,7 +1375,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 26
+    "dish_count": 27
   },
   {
     "id": "b4b846c0-c317-4824-a818-ff3d3874f8ed",
@@ -1397,7 +1397,7 @@
     "image_url": "",
     "sort_order": 69,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 18
+    "dish_count": 11
   },
   {
     "id": "8742ccef-7690-47ca-a99e-18d9b0dda2a9",
@@ -1409,7 +1409,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 6
+    "dish_count": 1
   },
   {
     "id": "03b2e056-9309-4245-b85c-d09ba1d75470",
@@ -1457,7 +1457,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 13
+    "dish_count": 7
   },
   {
     "id": "a2102a22-2a15-47c8-b03c-a4f16bb3377c",
@@ -1471,7 +1471,7 @@
     "image_url": "",
     "sort_order": 3,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 36
+    "dish_count": 33
   },
   {
     "id": "968dfd30-8265-458d-96c8-2736389d8acb",
@@ -1520,7 +1520,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 0
+    "dish_count": 3
   },
   {
     "id": "c9e06cb1-ef45-4f7f-a44e-6339c54dd5f2",
@@ -1557,7 +1557,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 1
+    "dish_count": 16
   },
   {
     "id": "a817201d-fc68-4a33-9fef-170e89e809cd",
@@ -1567,7 +1567,7 @@
     "image_url": "",
     "sort_order": 72,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 0
+    "dish_count": 3
   },
   {
     "id": "40370589-78a7-476a-bfdb-5c34fe28f640",
@@ -1579,7 +1579,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 1
+    "dish_count": 5
   },
   {
     "id": "25caab19-b33c-4a88-645b-bdf4d948557e",
@@ -1591,7 +1591,7 @@
     "image_url": "",
     "sort_order": 88,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 10
+    "dish_count": 9
   },
   {
     "id": "e3fce980-5f4d-4268-bdec-9ebae6799e95",
@@ -1639,7 +1639,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 56
+    "dish_count": 6
   },
   {
     "id": "9d95406f-8780-41ec-9dea-5c69e87dde20",
@@ -1664,7 +1664,7 @@
     "image_url": "",
     "sort_order": 1,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 26
+    "dish_count": 27
   },
   {
     "id": "dda9ade5-718c-42f2-b500-5e2636b350b3",
@@ -1689,7 +1689,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 12
+    "dish_count": 11
   },
   {
     "id": "ae5ab50a-f44f-4fb1-83d5-b7a75e9a712c",
@@ -1701,7 +1701,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 1
+    "dish_count": 3
   },
   {
     "id": "15b8cfbb-6dba-4831-b008-9662321a3a36",
@@ -1713,7 +1713,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 12
+    "dish_count": 2
   },
   {
     "id": "3f45610b-7842-4305-84f8-fa3d69e73217",
@@ -1738,7 +1738,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 22
+    "dish_count": 21
   },
   {
     "id": "25ecc42a-cb59-493b-930c-8c7b1ce0d127",
@@ -1750,7 +1750,7 @@
     "image_url": "",
     "sort_order": 3,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 49
+    "dish_count": 45
   },
   {
     "id": "06eb67e3-836e-49cc-bd13-5f815b137c25",
@@ -1763,7 +1763,7 @@
     "image_url": "",
     "sort_order": 67,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 5
+    "dish_count": 4
   },
   {
     "id": "48a1dbf4-b1bb-47a4-b5f5-4ec08b3762db",
@@ -1775,7 +1775,7 @@
     "image_url": "",
     "sort_order": 66,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 43
+    "dish_count": 44
   },
   {
     "id": "93491149-d143-477a-b2c2-a29f08593fbe",
@@ -1801,7 +1801,7 @@
     "image_url": "",
     "sort_order": 1,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 92
+    "dish_count": 95
   },
   {
     "id": "07ff4aac-4573-42be-b975-9133a0c24e3e",
@@ -1852,7 +1852,7 @@
     "image_url": "",
     "sort_order": 66,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 72
+    "dish_count": 74
   },
   {
     "id": "80acf94c-e39b-4849-9859-601bedb1f074",
@@ -1900,7 +1900,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 43
+    "dish_count": 44
   },
   {
     "id": "5193e7a0-6c91-4d1f-b6d2-ae2485889b1f",
@@ -1912,7 +1912,7 @@
     "image_url": "",
     "sort_order": 4,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 3
+    "dish_count": 1
   },
   {
     "id": "c612b854-48d8-46f8-a336-f470f8303f05",
@@ -1937,7 +1937,7 @@
     "image_url": "",
     "sort_order": 8,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 6
+    "dish_count": 3
   },
   {
     "id": "494c7959-08d8-4787-ac77-9bdc8e0f0b22",
@@ -1962,7 +1962,7 @@
     "image_url": "",
     "sort_order": 9,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 21
+    "dish_count": 17
   },
   {
     "id": "00ae74f0-1fd7-40c6-ab0b-4104f20bc63d",
@@ -1972,7 +1972,7 @@
     "image_url": "",
     "sort_order": 71,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 2
+    "dish_count": 4
   },
   {
     "id": "5292b8a4-d2ca-4560-9072-4dfc4150a1e8",
@@ -1984,7 +1984,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 11
+    "dish_count": 12
   },
   {
     "id": "d2d4896b-d65c-48a8-85ee-5677a0ad13fe",
@@ -1996,7 +1996,7 @@
     "image_url": "",
     "sort_order": 3,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 15
+    "dish_count": 4
   },
   {
     "id": "205151a6-ff39-471a-be72-c42bb8c8fd47",
@@ -2006,7 +2006,7 @@
     "image_url": "",
     "sort_order": 81,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 3
+    "dish_count": 0
   },
   {
     "id": "ccd68b86-d28f-4438-bb5c-ff9b13dc18a4",
@@ -2018,7 +2018,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 51
+    "dish_count": 52
   },
   {
     "id": "f118c59e-e5ca-4d7a-b69a-a7200e97a735",
@@ -2042,7 +2042,7 @@
     "image_url": "",
     "sort_order": 10,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 1
+    "dish_count": 0
   },
   {
     "id": "4341c798-bb39-445e-9ce4-7efe6532c3ef",
@@ -2054,7 +2054,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 56
+    "dish_count": 8
   },
   {
     "id": "e51c52e0-f959-46f5-89d0-722f4ba84c30",
@@ -2067,7 +2067,7 @@
     "image_url": "",
     "sort_order": 21,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 1
+    "dish_count": 0
   },
   {
     "id": "3dc1e5a6-79f2-4f9d-9ae9-47d9e46d3a26",
@@ -2079,7 +2079,7 @@
     "image_url": "",
     "sort_order": 3,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 4
+    "dish_count": 1
   },
   {
     "id": "13c013f8-cc8e-4f48-bb14-0f6517972fb5",
@@ -2093,7 +2093,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 90
+    "dish_count": 92
   },
   {
     "id": "e6d5c379-6eec-b600-02d5-4d54933d6e09",
@@ -2143,7 +2143,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 31
+    "dish_count": 36
   },
   {
     "id": "c0754115-f82a-4588-87cf-21d249c9e973",
@@ -2169,7 +2169,7 @@
     "image_url": "",
     "sort_order": 10,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 4
+    "dish_count": 20
   },
   {
     "id": "61ad1149-cc60-4e0a-bb69-838ebe3e13dc",
@@ -2266,7 +2266,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 25
+    "dish_count": 26
   },
   {
     "id": "df6cc83d-f6c3-419c-9505-62d0c9a14ae5",
@@ -2279,7 +2279,7 @@
     "image_url": "",
     "sort_order": 2,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 9
+    "dish_count": 10
   },
   {
     "id": "12dcbfab-5081-4d80-9493-a3ec4f0dd8ce",
@@ -2337,7 +2337,7 @@
     "image_url": "",
     "sort_order": 60,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 7
+    "dish_count": 9
   },
   {
     "id": "28cc9257-b7a8-89b1-5ab0-57de821b0d77",
@@ -2363,7 +2363,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 10
+    "dish_count": 3
   },
   {
     "id": "629ce5ba-e1f8-4370-8056-aeb0ac5171f8",
@@ -2400,7 +2400,7 @@
     "image_url": "",
     "sort_order": 72,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 30
+    "dish_count": 32
   },
   {
     "id": "205e568c-9197-4ad8-8f9d-c53e3492072e",
@@ -2417,7 +2417,7 @@
     "image_url": "",
     "sort_order": 10,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 127
+    "dish_count": 101
   },
   {
     "id": "52e2a931-38e6-4b63-b0a7-a98f631bed34",
@@ -2429,7 +2429,7 @@
     "image_url": "",
     "sort_order": 49,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 116
+    "dish_count": 122
   },
   {
     "id": "b6614d3b-33b8-4a9d-909c-69137d79c208",
@@ -2455,7 +2455,7 @@
     "image_url": "",
     "sort_order": 1,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 3
+    "dish_count": 0
   },
   {
     "id": "99a1717d-5aa8-4fe8-8e37-d684b2a10293",
@@ -2467,7 +2467,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 4
+    "dish_count": 11
   },
   {
     "id": "b252986b-064e-4d59-a0eb-479ce495792d",
@@ -2529,7 +2529,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 34
+    "dish_count": 32
   },
   {
     "id": "bd4ea06d-1cb4-453a-b565-555ec542b2f1",
@@ -2541,7 +2541,7 @@
     "image_url": "",
     "sort_order": 3,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 20
+    "dish_count": 11
   },
   {
     "id": "4e31a7fd-fd73-4a8c-beba-d701fc75df1c",
@@ -2551,7 +2551,7 @@
     "image_url": "",
     "sort_order": 1,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 18
+    "dish_count": 15
   },
   {
     "id": "7af10603-3653-4b92-be07-a5836f131f67",
@@ -2586,7 +2586,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 3
+    "dish_count": 1
   },
   {
     "id": "a38ef858-b252-49b0-81a3-48a76cbf7525",
@@ -2611,7 +2611,7 @@
     "image_url": "",
     "sort_order": 9,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 2
+    "dish_count": 1
   },
   {
     "id": "5d9a5277-5389-4e76-929b-10871156f979",
@@ -2659,7 +2659,7 @@
     "image_url": "",
     "sort_order": 4,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 9
+    "dish_count": 8
   },
   {
     "id": "f0e1c24a-8933-4bae-b7c9-0cfda683b63f",
@@ -2684,7 +2684,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 3
+    "dish_count": 2
   },
   {
     "id": "4246886c-f76c-4a16-b64c-052f5f93bcd3",
@@ -2706,7 +2706,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 2
+    "dish_count": 0
   },
   {
     "id": "b60b7da1-1ba4-40f4-a524-69525f64425b",
@@ -2718,7 +2718,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 3
+    "dish_count": 2
   },
   {
     "id": "a580e341-2f4d-47e7-b149-1a2e787ab102",
@@ -2804,7 +2804,7 @@
     "image_url": "",
     "sort_order": 9,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 83
+    "dish_count": 99
   },
   {
     "id": "6fdac050-92ef-4336-bdc7-d0b42a655919",
@@ -2820,7 +2820,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 13
+    "dish_count": 10
   },
   {
     "id": "e65ab017-12ac-4a85-8f1a-caf4b176c733",
@@ -2868,7 +2868,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 8
+    "dish_count": 10
   },
   {
     "id": "13d49d02-fca5-4ffa-bcef-5009092a75ad",
@@ -2892,7 +2892,7 @@
     "image_url": "",
     "sort_order": 2,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 110
+    "dish_count": 109
   },
   {
     "id": "2a0ccb26-2615-421c-8e36-1e6b96235877",
@@ -2906,7 +2906,7 @@
     "image_url": "",
     "sort_order": 88,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 20
+    "dish_count": 38
   },
   {
     "id": "a099b9af-4d6f-45e2-90db-a946d53ea4eb",
@@ -2919,7 +2919,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 12
+    "dish_count": 14
   },
   {
     "id": "0103d9c9-933a-4186-b678-b91a0c5b621d",
@@ -2955,7 +2955,7 @@
     "image_url": "",
     "sort_order": 13,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 31
+    "dish_count": 33
   },
   {
     "id": "c5b4002b-9fe4-46b8-817c-76ed3ef0bdc3",
@@ -2993,7 +2993,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 10
+    "dish_count": 11
   },
   {
     "id": "9b924d59-e83a-4e02-8e0a-2af490388064",
@@ -3017,7 +3017,7 @@
     "image_url": "",
     "sort_order": 8,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 60
+    "dish_count": 64
   },
   {
     "id": "341f28a3-eec6-4d86-89b2-085db8b28ab0",
@@ -3042,7 +3042,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 105
+    "dish_count": 180
   },
   {
     "id": "9f666227-df67-465a-8d11-6ed689664a2c",
@@ -3054,7 +3054,7 @@
     "image_url": "",
     "sort_order": 1,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 20
+    "dish_count": 33
   },
   {
     "id": "d65a72d4-e392-45de-9f2d-64e9117d617a",
@@ -3078,7 +3078,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 3
+    "dish_count": 2
   },
   {
     "id": "95243cd5-42a8-40e8-ae7c-d7d9f6269bd9",
@@ -3162,7 +3162,7 @@
     "image_url": "",
     "sort_order": 18,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 46
+    "dish_count": 43
   },
   {
     "id": "778c3757-491b-44e4-9cd7-1398ae3fa34c",
@@ -3186,7 +3186,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 12
+    "dish_count": 13
   },
   {
     "id": "41588609-4fb0-4230-a568-b7c90ba72836",
@@ -3201,7 +3201,7 @@
     "image_url": "",
     "sort_order": 5,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 53
+    "dish_count": 54
   },
   {
     "id": "b79e6677-d9e5-41fe-b8ba-a82f6e1480ce",
@@ -3213,7 +3213,7 @@
     "image_url": "",
     "sort_order": 6,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 30
+    "dish_count": 32
   },
   {
     "id": "e74c9afd-ae5f-483e-9905-a63f0ad7ee23",
@@ -3225,7 +3225,7 @@
     "image_url": "",
     "sort_order": 8,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 2
+    "dish_count": 0
   },
   {
     "id": "900980e2-5217-45b1-1bf8-4e0a547ce4be",
@@ -3235,7 +3235,7 @@
     "image_url": "",
     "sort_order": 68,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 15
+    "dish_count": 20
   },
   {
     "id": "18fb1d2e-0ebc-4378-bf3a-0a1ee4f952a9",
@@ -3273,7 +3273,7 @@
     "image_url": "",
     "sort_order": 0,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 13
+    "dish_count": 15
   },
   {
     "id": "71c54999-da51-4ff4-bb15-a5f0d42663b0",
@@ -3283,7 +3283,7 @@
     "image_url": "",
     "sort_order": 54,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 3
+    "dish_count": 4
   },
   {
     "id": "8befa39c-1bce-44f8-8158-0e45497c1380",
@@ -3305,7 +3305,7 @@
     "image_url": "",
     "sort_order": 26,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 1
+    "dish_count": 2
   },
   {
     "id": "dcfd07f3-fe3c-4a01-8d3d-806fe5b17164",
@@ -3317,7 +3317,7 @@
     "image_url": "",
     "sort_order": 4,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 3
+    "dish_count": 2
   },
   {
     "id": "857c7181-d77c-4e24-8d89-0da45fe29c1e",
@@ -3329,7 +3329,7 @@
     "image_url": "",
     "sort_order": 3,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 8
+    "dish_count": 11
   },
   {
     "id": "36c29c06-93c6-4a45-9523-fc5d0c8e0650",
@@ -3356,7 +3356,7 @@
     "image_url": "",
     "sort_order": 2,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 49
+    "dish_count": 29
   },
   {
     "id": "62859d7d-3817-41a4-a563-b00937e40472",
@@ -3438,6 +3438,6 @@
     "image_url": "",
     "sort_order": 3,
     "created_at": "2026-08-22T14:00:08.446712+00:00",
-    "dish_count": 5
+    "dish_count": 0
   }
 ]
