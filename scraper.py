@@ -137,72 +137,22 @@ def parse_all_images(images_data):
     return urls
 
 def fetch_categories():
-    print("Fetching categories from live API...")
-    url = f"{BASE_URL}/ecosystem/Cookups/subject/Category/index"
-    payload = ["IndexQuery", ["EqualToNumeric", "IsActive", "1"], {"Page": {"Size": 65535, "Offset": "0"}, "OrderBy": "FastestOrSingleSearchScoreIfAvailable"}]
-    raw = None
-    for attempt in range(3):
+    req = urllib.request.Request(f"{BASE_URL}/categories", headers=HEADERS)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            raw = json.loads(resp.read().decode("utf-8"))
+            return raw.get("data", raw) if isinstance(raw, dict) else raw
+    except Exception as _cke:
+        print(f"  [!] Live categories fetch failed ({_cke}). Falling back to database...", flush=True)
         try:
-            req = urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers=HEADERS)
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                raw = json.loads(resp.read().decode('utf-8'))
-            break
-        except Exception as e:
-            if attempt == 2:
-                print(f"  [!] Live categories fetch failed after 3 attempts ({e}). Falling back to database...")
-                break
-            time.sleep(2 ** attempt)
-
-    if not raw:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        rows = cursor.execute("SELECT id, name, slug, parent_ids, image_url, sort_order FROM categories").fetchall()
-        conn.close()
-        if rows:
+            conn = get_db_connection()
+            rows = conn.cursor().execute("SELECT id, name, slug, parent_ids, image_url, sort_order FROM categories").fetchall()
+            conn.close()
             return [dict(r) for r in rows]
-        return []
-    
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    now_str = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    
-    categories = []
-    for entry in raw:
-        if isinstance(entry, list) and len(entry) >= 2 and entry[0] == "Granted":
-            cat = entry[1].get("Data", {})
-            cat_id = cat.get("Id", [None, None])[1]
-            if not cat_id:
-                continue
-            name = cat.get("Name", {}).get("English", [None, ""])[1] or "Unnamed"
-            slug = cat.get("UrlSlug", [None, [None, ""]])[1][1] if cat.get("UrlSlug") else ""
-            parents = json.dumps([p[1] for p in cat.get("ParentCategoryIds", []) if len(p) == 2])
-            img_url = parse_image_url(cat.get("Image"))
-            sort_order = cat.get("SortOrder", 0)
-            
-            categories.append({
-                "id": cat_id,
-                "name": name,
-                "slug": slug,
-                "parent_ids": parents,
-                "image_url": img_url,
-                "sort_order": sort_order
-            })
-            
-            cursor.execute('''
-                INSERT INTO categories (id, name, slug, parent_ids, image_url, sort_order, created_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-                ON CONFLICT(id) DO UPDATE SET
-                    name=excluded.name,
-                    slug=excluded.slug,
-                    parent_ids=excluded.parent_ids,
-                    image_url=excluded.image_url,
-                    sort_order=excluded.sort_order
-            ''', (cat_id, name, slug, parents, img_url, sort_order, now_str))
+        except Exception as _dbe:
+            print(f"  [!] DB fallback failed ({_dbe})", flush=True)
+            return []
 
-    conn.commit()
-    conn.close()
-    print(f"Saved/Updated {len(categories)} categories in DB.")
-    return categories
 
 def fetch_dishes_for_category(cat_id, now_str, today_str):
     url = f"{BASE_URL}/view/DishListView/"
