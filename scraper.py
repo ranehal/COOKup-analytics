@@ -140,10 +140,27 @@ def fetch_categories():
     print("Fetching categories from live API...")
     url = f"{BASE_URL}/ecosystem/Cookups/subject/Category/index"
     payload = ["IndexQuery", ["EqualToNumeric", "IsActive", "1"], {"Page": {"Size": 65535, "Offset": "0"}, "OrderBy": "FastestOrSingleSearchScoreIfAvailable"}]
-    
-    req = urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers=HEADERS)
-    with urllib.request.urlopen(req) as resp:
-        raw = json.loads(resp.read().decode('utf-8'))
+    raw = None
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                raw = json.loads(resp.read().decode('utf-8'))
+            break
+        except Exception as e:
+            if attempt == 2:
+                print(f"  [!] Live categories fetch failed after 3 attempts ({e}). Falling back to database...")
+                break
+            time.sleep(2 ** attempt)
+
+    if not raw:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        rows = cursor.execute("SELECT id, name, slug, parent_ids, image_url, sort_order FROM categories").fetchall()
+        conn.close()
+        if rows:
+            return [dict(r) for r in rows]
+        return []
     
     conn = get_db_connection()
     cursor = conn.cursor()
