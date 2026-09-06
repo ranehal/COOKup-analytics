@@ -1,8 +1,8 @@
 {
-  "total_dishes": 6870,
+  "total_dishes": 6877,
   "total_categories": 281,
   "total_cooks": 160,
-  "price_drops": 1,
-  "avg_price": 675.46,
-  "total_history_records": 63280
+  "price_drops": 0,
+  "avg_price": 675.47,
+  "total_history_records": 63882
 }
